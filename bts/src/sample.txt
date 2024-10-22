@@ -1,0 +1,42 @@
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // Implement search functionality here
+    console.log('Searching for:', searchTerm);
+  };
+
+  return (
+    
+    <Navbar>
+    <Navbar className="search-bar">
+    <form onSubmit={handleSearch}>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleInputChange}
+        placeholder="Search..."
+        style={inputStyle}
+      />
+      <button type="submit" style={buttonStyle}>Search</button>
+    </form>
+    </Navbar>
+    <Navbar className="drop-down">
+    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+    </Navbar>
+    </Navbar>
